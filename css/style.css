@@ -1,9 +1,9 @@
 
 /*
-1.Posicionamiento
-2.BoxModel
-3.Tipografia
-4.VisualTopics
+1.Posicionamiento -> static, absolute, relative, fixed,flex, grid
+2.BoxModel -> margin, border, padding, content
+3.Tipografia -> ipos, tamaños de fuente, etc
+4.VisualTopics  -> box-shadow, border-radius, gradient, etc
 5.Miscelanios u otros
 */
 :root {
@@ -17,6 +17,7 @@
     --grey: #bababa;
     --off-white: #faf8f7;
     --just-white: #fff;
+    --off-white:#FAF8F7;
 }
 *{
     box-sizing: border-box;
@@ -27,3 +28,191 @@ html{
     font-size: 62.5%;
     font-family: "DM Sans", sans-serif;
 }
+header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    /*Con esto este contenador no se va a hacer más pequño*/
+    min-width: 320px;
+    height: 334px;
+    text-align: center;
+    background: linear-gradient(207.8deg, #201E1C 16.69%, #F7931A 100%);
+
+}
+header img {
+    width: 150px;
+    height: 24px;
+    margin-top: 60px;
+    align-self: center;
+}
+.header--title-container{
+    width: 90%;
+    min-width: 288px;
+    max-width: 900px;
+    height: 218px;
+    margin-top: 40px;
+    text-align: center;
+    align-self: center;
+}
+.header--title-container h1 {
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--just-white);
+}
+.header--title-container p{
+    margin-top: 25px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: var(--soft-orange);
+}
+/* Botón flotante */
+.header--title-container .header--button {
+    position: absolute; /* Esto nos ayuda a traer el botón sobre el margin y permite mover en todos los angulos*/
+    /*Regla de css*/
+    /*Esto genera un calculo  pero  toca tener en cuenta los pixles del botón como tal*/
+    left: calc(50% - 114px);
+    top: 270px;
+    display: block;
+    margin-top: 35px;
+    padding: 15px;
+    width: 229px;
+    height: 48px;
+    background-color: var(--off-white);
+    /*Sombra*/
+    box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--black);
+}
+.header--button span {
+    display: inline-block;
+    width: 13px;
+    height: 8px;
+    /*Para separar el icono de la palabra*/
+    background-image: url('../assets/icons/arrow-down-black.svg');
+    margin-left: 10px;
+}
+main {
+    width: 100%;
+    min-width: 320px;
+    /*El mismo contenido va a dar la altura*/
+    height: auto;
+    background-color: var(--off-white);
+}
+.main-exchange-container {
+    width: 100%;
+    height: auto;
+    padding-top: 80px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.main-exchange-container--title{
+    width: 90%;
+    min-width: 288px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.main-exchange-container .background-img{
+    /*Darle un tamaño al div*/
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    background-image: url('../assets/img/Bitcoin.svg');
+    /*Buenas practicas de agregar imagenes*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.main-exchange-container h2 {
+    margin-bottom: 30px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    /*Altura a las letras*/
+    line-height: 2.6rem;
+    color: var(--black);
+}
+.main-exchange-container p{
+    margin-bottom: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #757575;
+}
+.main-tables-container .table{
+    background-color: var(--just-white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    width: 200px;
+    height: auto;
+    margin: 0 auto;
+    color: #757575;
+    list-style: none;
+    border-radius: 8px;
+    border: none;
+}
+.main-tables-container .table li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 100px;
+    padding: 10px 16px;
+    font-size: 1.6rem;
+}
+
+.table .grid-item:nth-child(1){
+    color: #B5B0AC;
+    border-right: 1px solid var(--off-white);
+}
+.table .grid-item:nth-child(2){
+    grid-column: 1 / 2;
+    grid-row: 2 /2;
+    color: #B5B0AC;
+    border-right: 1px solid var(--off-white);
+}
+.table .grid-item:nth-child(3){
+    grid-column: 1 / 2;
+    grid-row: 3 /3;
+    color: #B5B0AC;
+    border-right: 1px solid  var(--off-white);
+}
+.table .grid-item:nth-child(4){
+    grid-column: 1 / 2;
+    grid-row: 4/4;
+    color: #B5B0AC;
+    border-right: 1px solid  var(--off-white);
+}
+
+.table .grid-item:nth-child(1),
+.table .grid-item:nth-child(2),
+.table .grid-item:nth-child(3),
+.table .grid-item:nth-child(5),
+.table .grid-item:nth-child(6),
+.table .grid-item:nth-child(7){
+    border-bottom: 1px solid  var(--off-white);
+}
+
+.table li span{
+    /*con esto hacemos que este en la misma linea de texto*/
+    width: 12px;
+    height: 8px;
+    background-image:  url('../assets/icons/trending-down.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.table .grid-item:nth-child(6) span{
+    background-image:  url('../assets/icons/trending-up.svg');
+}
+/* .main-tables-container .table ul li {
+} */
