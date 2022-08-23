@@ -407,7 +407,6 @@ main {
 .plans-container--slider::-webkit-scrollbar {
     background-color: var(--soft-orange);
     height: 3px;
-
 }
 .plans-container--slider::-webkit-scrollbar-thumb {
     background-color: var(--bitcoin-orange);
